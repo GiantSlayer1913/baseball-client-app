@@ -58,9 +58,6 @@ const createTeams = function (data) {
   })
 }
 const updateTeams = function (data) {
-  // console.log(data)
-
-  console.log('token is ', store.user.token)
   return $.ajax({
     url: config.apiUrl + '/teams/' + data.team.id,
     method: 'PATCH',
@@ -83,7 +80,6 @@ const getTeams = (data) => {
   })
 }
 const destroyTeam = function (data) {
-  console.log(data.team.id)
   return $.ajax({
     url: config.apiUrl + '/teams/' + data.team.id,
     method: 'DELETE',

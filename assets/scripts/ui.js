@@ -90,7 +90,6 @@ const updateTeamsFailure = () => {
   $('#update-teams').trigger('reset')
 }
 const getTeamsSuccess = (data) => {
-  console.log(data)
   $('#team-list').text('')
   $('#message2').text('')
   $('#message2').css('background', 'none')
