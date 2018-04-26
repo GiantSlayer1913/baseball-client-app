@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Mike's Database</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Mike's Database</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Baseball Client</h1>
-      <div id="message"></div>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1>Baseball Client</h1>
+
+  <div id="message"></div>
+
   <form id="sign-up" class="border visible-on-start">
     <fieldset>
       <legend>Sign up!</legend>
-      <input type="email" name="credentials[email]" placeholder="Email" autocomplete='email'>
-      <input type="password" name="credentials[password]" placeholder="Password">
-      <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+      <input required type="email" name="credentials[email]" placeholder="Email" autocomplete='email'>
+      <input required type="password" name="credentials[password]" placeholder="Password">
+      <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
       <input type="submit" value="Sign up!">
     </fieldset>
   </form>
@@ -28,8 +32,8 @@
   <form id="sign-in" class="border visible-on-start">
     <fieldset>
       <legend>Sign in!</legend>
-      <input type="email" name="credentials[email]" placeholder="Email" autocomplete='email'>
-      <input type="password" name="credentials[password]" placeholder="Password">
+      <input required type="email" name="credentials[email]" placeholder="Email" autocomplete='email'>
+      <input required type="password" name="credentials[password]" placeholder="Password">
       <input type="submit" value="Sign in!">
     </fieldset>
   </form>
@@ -58,7 +62,7 @@
   <form id="create-teams" class="border">
     <fieldset>
       <legend>Create Teams!</legend>
-      <input type="text" name="team[team_name]" placeholder="Team Name">
+      <input required type="text" name="team[team_name]" placeholder="Team Name">
       <input type="submit" value="Create Teams!">
     </fieldset>
   </form>
@@ -67,14 +71,14 @@
   <form id="update-teams" class="border">
     <fieldset>
       <legend>Update Team!</legend>
-       <input type="text" name="team[id]" placeholder="Team ID">
-      <input type="text" name="team[team_name]" placeholder="Team Name">
+      <input required type="text" name="team[id]" placeholder="Team ID">
+      <input required type="text" name="team[team_name]" placeholder="Team Name">
       <input type="submit" value="Update Team!">
     </fieldset>
   </form>
   <br>
 
-<div id="message2"></div>
+  <div id="message2"></div>
 
   <form id="get-teams" class="border">
     <fieldset>
@@ -84,15 +88,16 @@
   </form>
   <br>
 
-<div id="team-list" class="team-list"></div>
+  <div id="team-list" class="team-list"></div>
 
   <form id="destroy-team" class="border">
     <fieldset>
       <legend>Delete Team!</legend>
-      <input type="text" name="team[id]" placeholder="Team ID">
+      <input required type="text" name="team[id]" placeholder="Team ID">
       <input type="submit" value="Delete Team!">
     </fieldset>
   </form>
   <br>
-    </body>
+</body>
+
 </html>
