@@ -113,7 +113,7 @@ const getTeamsFailure = () => {
 const destroyTeamSuccess = (data) => {
   $('#message2').text('Successfully deleted team')
   $('#message2').css('background-color', 'green')
-  $('#delete-teams').trigger('reset')
+  $('#destroy-team').trigger('reset')
 }
 const destroyTeamFailure = () => {
   $('#message2').text('Failure to delete team')
