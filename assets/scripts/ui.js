@@ -111,14 +111,14 @@ const getTeamsFailure = () => {
   $('#message2').css('background-color', 'red')
 }
 const destroyTeamSuccess = (data) => {
-  $('#message').text('Successfully deleted team')
-  $('#message').css('background-color', 'green')
+  $('#message2').text('Successfully deleted team')
+  $('#message2').css('background-color', 'green')
   $('#delete-teams').trigger('reset')
 }
 const destroyTeamFailure = () => {
-  $('#message').text('Failure to delete team')
-  $('#message').css('background-color', 'red')
-  $('#delete-teams').trigger('reset')
+  $('#message2').text('Failure to delete team')
+  $('#message2').css('background-color', 'red')
+  $('#destroy-team').trigger('reset')
 }
 
 module.exports = {
