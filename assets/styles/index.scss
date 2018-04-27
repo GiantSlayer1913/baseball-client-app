@@ -1,6 +1,5 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-
 $black: #000;
 
 form {
@@ -20,6 +19,7 @@ form {
 
 .team-list {
   display: block;
+  padding-left: 20px;
 }
 
 h1 {

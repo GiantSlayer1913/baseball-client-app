@@ -89,26 +89,37 @@ const updateTeamsFailure = () => {
   $('#message').css('background-color', 'red')
   $('#update-teams').trigger('reset')
 }
+
 const getTeamsSuccess = (data) => {
+  // Clears form fields
   $('#team-list').text('')
   $('#message2').text('')
   $('#message2').css('background', 'none')
-  for (let i = 0; i < data.teams.length; i++) {
-    const teamName = data.teams[i].team_name
-    const teamId = data.teams[i].id
-    $('#team-list').append('Team Id ', teamId, ' - ', teamName, '...')
+  // Prints team names
+  if (data.teams.length > 0) {
+    for (let i = 0; i < data.teams.length; i++) {
+      const teamName = data.teams[i].team_name
+      const teamId = data.teams[i].id
+      $('#team-list').append(teamId, ' - ', teamName, '...')
+      $('#team-list').css('color', 'black')
+      $('#team-list').css('background', 'rgb(199,199,199)')
+      $('#team-list').css('display', 'block')
+    }
+  } else {
+    $('#team-list').append("You don't have any teams. First, go to 'Create Teams!' and enter a name for your 'Team Name'.")
+    $('#team-list').css('background-color', 'red')
+    $('#team-list').css('font color', '#ffffff')
   }
-  $('#team-list').css('color', 'black')
-  $('#team-list').css('background', 'rgb(199,199,199)')
   $('#message2').css('display', 'block')
   $('#message2').text('Successfully got teams')
   $('#message2').css('background-color', 'green')
-  $('#team-list').css('display', 'block')
 }
+
 const getTeamsFailure = () => {
   $('#message2').text('Failure to get teams')
   $('#message2').css('background-color', 'red')
 }
+
 const destroyTeamSuccess = (data) => {
   $('#message2').text('Successfully deleted team')
   $('#message2').css('background-color', 'green')
