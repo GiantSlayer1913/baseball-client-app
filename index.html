@@ -22,8 +22,8 @@
     <fieldset>
       <legend>Sign up!</legend>
       <input required type="email" name="credentials[email]" placeholder="Email" autocomplete='email'>
-      <input required type="password" name="credentials[password]" placeholder="Password">
-      <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+      <input required type="password" name="credentials[password]" placeholder="Password" autocomplete="false">
+      <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" autocomplete="off">
       <input type="submit" value="Sign up!">
     </fieldset>
   </form>
@@ -33,7 +33,7 @@
     <fieldset>
       <legend>Sign in!</legend>
       <input required type="email" name="credentials[email]" placeholder="Email" autocomplete='email'>
-      <input required type="password" name="credentials[password]" placeholder="Password">
+      <input required type="password" name="credentials[password]" placeholder="Password" autocomplete="off">
       <input type="submit" value="Sign in!">
     </fieldset>
   </form>
@@ -42,8 +42,8 @@
   <form id="change-password" class="border">
     <fieldset>
       <legend>Change password!</legend>
-      <input type="password" name="passwords[old]" placeholder="Old Password">
-      <input type="password" name="passwords[new]" placeholder="New Password">
+      <input type="password" name="passwords[old]" placeholder="Old Password" autocomplete="off">
+      <input type="password" name="passwords[new]" placeholder="New Password" autocomplete="off">
       <input type="submit" value="Change password!">
     </fieldset>
   </form>
@@ -62,7 +62,7 @@
   <form id="create-teams" class="border">
     <fieldset>
       <legend>Create Teams!</legend>
-      <input required type="text" name="team[team_name]" placeholder="Team Name">
+      <input required type="text" name="team[team_name]" placeholder="Team Name" autocomplete="off">
       <input type="submit" value="Create Teams!">
     </fieldset>
   </form>
@@ -83,8 +83,8 @@
   <form id="update-teams" class="border">
     <fieldset>
       <legend>Update Team!</legend>
-      <input required type="text" name="team[id]" placeholder="Team ID">
-      <input required type="text" name="team[team_name]" placeholder="Team Name">
+      <input required type="text" name="team[id]" placeholder="Team ID" autocomplete="off">
+      <input required type="text" name="team[team_name]" placeholder="Team Name" autocomplete="off">
       <input type="submit" value="Update Team!">
     </fieldset>
   </form>
@@ -93,7 +93,7 @@
   <form id="destroy-team" class="border">
     <fieldset>
       <legend>Delete Team!</legend>
-      <input required type="text" name="team[id]" placeholder="Team ID">
+      <input required type="text" name="team[id]" placeholder="Team ID" autocomplete="off">
       <input type="submit" value="Delete Team!">
     </fieldset>
   </form>
