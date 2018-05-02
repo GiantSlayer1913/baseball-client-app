@@ -97,6 +97,7 @@ const getTeamsSuccess = (data) => {
   $('#message2').css('background', 'none')
   // Prints team names
   if (data.teams.length > 0) {
+    $('#team-list').append('Team ID - Team Name', '<br>')
     for (let i = 0; i < data.teams.length; i++) {
       const teamName = data.teams[i].team_name
       const teamId = data.teams[i].id
@@ -104,6 +105,8 @@ const getTeamsSuccess = (data) => {
       $('#team-list').css('color', 'black')
       $('#team-list').css('background', 'rgb(199,199,199)')
       $('#team-list').css('display', 'block')
+      $('#team-list').css('text-align', 'center')
+      $('#team-list').css('font-size', '20px')
     }
   } else {
     $('#team-list').append("You don't have any teams. First, go to 'Create Teams!' and enter a name for your 'Team Name'.")
