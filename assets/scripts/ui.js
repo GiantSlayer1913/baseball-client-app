@@ -64,6 +64,7 @@ const signOutSuccess = function (data) {
   $('#get-all-players').css('display', 'none')
   $('#get-your-players').css('display', 'none')
   $('#delete-players').css('display', 'none')
+  $('#get-all-players-list').css('display', 'none')
   store.user = null
 }
 const signOutFailure = function () {
@@ -86,7 +87,6 @@ const createTeamsSuccess = (data) => {
   $('#get-all-players').css('display', 'block')
   $('#get-your-players').css('display', 'block')
   $('#delete-players').css('display', 'block')
-  store.teams = data.teams
 }
 const createTeamsFailure = () => {
   $('#message').text('Failure to create team')
@@ -98,7 +98,6 @@ const updateTeamsSuccess = (data) => {
   $('#message').text('Successfully updated team')
   $('#message').css('background-color', 'green')
   $('#update-teams').trigger('reset')
-  store.teams = data.teams
 }
 const updateTeamsFailure = () => {
   $('#message').text('Failure to update team')
@@ -148,7 +147,6 @@ const destroyTeamSuccess = (data) => {
   $('#message2').text('Successfully deleted team')
   $('#message2').css('background-color', 'green')
   $('#destroy-team').trigger('reset')
-  store.teams.id = null
 }
 const destroyTeamFailure = () => {
   $('#message2').text('Failure to delete team')
@@ -175,7 +173,6 @@ const updatePlayerSuccess = (data) => {
   $('#message2').text('Successfully update player')
   $('#message2').css('background-color', 'green')
   $('#update-player').trigger('reset')
-  store.players = data.players
 }
 const updatePlayerFailure = () => {
   $('#message2').text('Failure to update player')
@@ -189,9 +186,9 @@ const getAllPlayersSuccess = (data) => {
   $('#get-all-players-list').text('')
   $('#message2').text('')
   $('#message2').css('background', 'none')
-  // Prints team names
-  if (data.teams.length > 0) {
-    $('#get-all-players-list').append('All Players', '<br>')
+  // Prints players names
+  if (data.players.length > 0) {
+    $('#get-all-players-list').append('Name  -  ID', '<br>')
     for (let i = 0; i < data.players.length; i++) {
       const playerName = data.players[i].name
       const playerId = data.players[i].id
@@ -221,6 +218,28 @@ const getAllPlayersFailure = () => {
 // GET YOUR PLAYERS SUCCESS & FAILURE
 // :name, :position, :bat, :throw, :team_id
 const getYourPlayersSuccess = (data) => {
+  // Clears form fields
+  $('#get-your-players-list').text('')
+  $('#message2').text('')
+  $('#message2').css('background', 'none')
+  // Prints players names
+  if (data.players.length > 0) {
+    $('#get-your-players-list').append('Your Team Players', '<br>', 'Name', ' - ', 'Position', ' - ', 'Bat', ' - ', 'Throw')
+    for (let i = 0; i < data.players.length; i++) {
+      const playerName = data.players[i].name
+      const playerId = data.players[i].id
+      $('#get-your-players-list').append(playerName, ' - ', playerId, '<br>')
+      $('#get-your-players-list').css('color', 'black')
+      $('#get-your-players-list').css('background', 'rgb(199,199,199)')
+      $('#get-your-players-list').css('display', 'block')
+      $('#get-your-players-list').css('text-align', 'center')
+      $('#get-your-players-list').css('font-size', '20px')
+    }
+  } else {
+    $('#get-your-players-list').append("You don't have any teams. First, go to 'Create Teams!' and enter a name for your 'Team Name'.")
+    $('#get-your-players-list').css('background-color', 'red')
+    $('#get-your-players-list').css('font color', '#ffffff')
+  }
   $('#message2').text('Successfully got your players')
   $('#message2').css('background-color', 'green')
   $('#get-your-players').trigger('reset')
@@ -236,7 +255,6 @@ const deletePlayersSuccess = (data) => {
   $('#message2').text('Successfully deleted your players')
   $('#message2').css('background-color', 'green')
   $('#delete-players').trigger('reset')
-  store.players.id = null
 }
 const deletePlayersFailure = () => {
   $('#message2').text('Failure to delete your players')

@@ -103,7 +103,7 @@ const createPlayer = function (data) {
 }
 const updatePlayer = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/players/' + data.players.id,
+    url: config.apiUrl + '/players/' + data.team.player.id,
     method: 'PATCH',
     headers: {
       contentType: 'application/json',
@@ -126,7 +126,7 @@ const getAllPlayers = (data) => {
 
 const getYourPlayers = (data) => {
   return $.ajax({
-    url: config.apiUrl + '/players/' + data.teams.id,
+    url: config.apiUrl + '/players/' + data.players,
     method: 'GET',
     headers: {
       contentType: 'application/json',

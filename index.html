@@ -98,6 +98,7 @@
     <fieldset>
       <legend>Update Player!</legend>
       <input required type="text" name="team_id" placeholder="Team ID" autocomplete="on">
+      <input required type="text" name="player_id" placeholder="Player ID" autocomplete="on">
       <input type="text" name="name" placeholder="Name" autocomplete="off">
       <input type="text" name="position" placeholder="Position" autocomplete="off">
       <input type="text" name="bat" placeholder="Bat" autocomplete="off">
@@ -133,7 +134,7 @@
 <form id="delete-players" class="border">
   <fieldset>
     <legend>Delete Players!</legend>
-    <input required type="text" name="player[name]" placeholder="Player Name" autocomplete="on">
+    <input required type="text" name="player[player_id]" placeholder="Player ID" autocomplete="on">
     <input type="submit" value="Delete Player!">
   </fieldset>
 </form>

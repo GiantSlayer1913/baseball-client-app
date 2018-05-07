@@ -83,7 +83,7 @@ const onGetAllPlayers = (event) => {
   const data = getFormFields(event.target)
   api.getAllPlayers(data)
     .then(ui.getAllPlayersSuccess)
-    .cathc(ui.getAllPlayersFailure)
+    .catch(ui.getAllPlayersFailure)
 }
 
 const onGetYourPlayers = (event) => {
