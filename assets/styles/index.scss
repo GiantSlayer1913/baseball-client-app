@@ -2,6 +2,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 $black: #000;
 
+.border {
+  border: 3px solid $black;
+  margin: 20px;
+  padding: 20px;
+}
+
 form {
   display: none;
   font-size: 18px;
@@ -31,10 +37,4 @@ form {
 h1 {
   font-size: 28px;
   text-align: center;
-}
-
-.border {
-  border: 3px solid $black;
-  margin: 20px;
-  padding: 20px;
 }

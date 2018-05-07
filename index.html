@@ -31,7 +31,6 @@
     </fieldset>
   </form>
   <br>
-
 <!-- SIGN IN  -->
   <form id="sign-in" class="border visible-on-start">
     <fieldset>
@@ -42,7 +41,6 @@
     </fieldset>
   </form>
   <br>
-
 <!-- CHANGE PASSWORD  -->
   <form id="change-password" class="border">
     <fieldset>
@@ -53,7 +51,6 @@
     </fieldset>
   </form>
   <br>
-
 <!-- SIGN OUT  -->
   <form id="sign-out" class="border">
     <fieldset>
@@ -66,6 +63,7 @@
   <!-- Teams Forms -->
   <div id="team-forms" class='team-forms'>Team forms below here:</div>
 
+<!-- CREATE TEAMS  -->
   <form id="create-teams" class="border">
     <fieldset>
       <legend>Create Teams!</legend>
@@ -75,9 +73,45 @@
   </form>
   <br>
 
+<!-- MESSAGE 2  -->
+  <div id="message2"></div>
+
+<!-- GET TEAMS  -->
+  <form id="get-teams" class="border">
+    <fieldset>
+      <legend>Get Teams!</legend>
+      <input type="submit" value="Get Teams!">
+    </fieldset>
+  </form>
+  <br>
+
+<!-- UPADTE TEAMS  -->
+  <form id="update-teams" class="border">
+    <fieldset>
+      <legend>Update Team!</legend>
+      <input required type="text" name="team[id]" placeholder="Team ID" autocomplete="off">
+      <input required type="text" name="team[team_name]" placeholder="Team Name" autocomplete="off">
+      <input type="submit" value="Update Team!">
+    </fieldset>
+  </form>
+  <br>
+
+<!-- DESTROY TEAMS  -->
+  <form id="destroy-team" class="border">
+    <fieldset>
+      <legend>Delete Team!</legend>
+      <input required type="text" name="team[id]" placeholder="Team ID" autocomplete="off">
+      <input type="submit" value="Delete Team!">
+    </fieldset>
+  </form>
+  <br>
+
+<!-- TEAMS LIST -->
+  <div id="team-list" class="team-list"></div>
+
   <!-- Player Forms -->
 
-  <div id="player-forms" class='player-forms'>Player forms below here:</div>
+  <div id="player-forms" class='player-forms'>Player forms below:</div>
 
 <!-- CREATE PLAYER -->
   <form id="create-player" class="border">
@@ -139,45 +173,6 @@
   </fieldset>
 </form>
 <br>
-
-<!-- MESSAGE 2  -->
-  <div id="message2"></div>
-
-<!-- GET TEAMS  -->
-  <form id="get-teams" class="border">
-    <fieldset>
-      <legend>Get Teams!</legend>
-      <input type="submit" value="Get Teams!">
-    </fieldset>
-  </form>
-  <br>
-
-
-
-  <div id="team-list" class="team-list"></div>
-
-<!-- UPADTE TEAMS  -->
-  <form id="update-teams" class="border">
-    <fieldset>
-      <legend>Update Team!</legend>
-      <input required type="text" name="team[id]" placeholder="Team ID" autocomplete="off">
-      <input required type="text" name="team[team_name]" placeholder="Team Name" autocomplete="off">
-      <input type="submit" value="Update Team!">
-    </fieldset>
-  </form>
-  <br>
-
-<!-- DESTROY TEAMS  -->
-  <form id="destroy-team" class="border">
-    <fieldset>
-      <legend>Delete Team!</legend>
-      <input required type="text" name="team[id]" placeholder="Team ID" autocomplete="off">
-      <input type="submit" value="Delete Team!">
-    </fieldset>
-  </form>
-  <br>
-
-
 
 
 
