@@ -89,6 +89,63 @@ const destroyTeam = function (data) {
     }
   })
 }
+// Player Functions below
+const createPlayer = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/players',
+    method: 'POST',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+const updatePlayer = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/players/' + data.players.id,
+    method: 'PATCH',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+const getAllPlayers = (data) => {
+  return $.ajax({
+    url: config.apiUrl + '/players',
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const getYourPlayers = (data) => {
+  return $.ajax({
+    url: config.apiUrl + '/players/' + data.teams.id,
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const deletePlayers = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/players/' + data.players.id,
+    method: 'DELETE',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
   signUp,
@@ -98,5 +155,10 @@ module.exports = {
   createTeams,
   updateTeams,
   getTeams,
-  destroyTeam
+  destroyTeam,
+  createPlayer,
+  updatePlayer,
+  getAllPlayers,
+  getYourPlayers,
+  deletePlayers
 }

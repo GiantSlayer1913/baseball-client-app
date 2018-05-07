@@ -26,7 +26,6 @@ const signInSuccess = function (data) {
   $('#sign-up').trigger('reset')
   $('#sign-in').css('display', 'none')
   $('#sign-in').trigger('reset')
-
   store.user = data.user
 }
 const signInFailure = function () {
@@ -60,6 +59,11 @@ const signOutSuccess = function (data) {
   $('#team-list').text('')
   $('#message2').text('')
   $('#message2').css('background', 'none')
+  $('#create-player').css('display', 'none')
+  $('#update-player').css('display', 'none')
+  $('#get-all-players').css('display', 'none')
+  $('#get-your-players').css('display', 'none')
+  $('#delete-players').css('display', 'none')
   store.user = null
 }
 const signOutFailure = function () {
@@ -68,10 +72,21 @@ const signOutFailure = function () {
 }
 
 // Teams ui below
+$('#update-player')
+$('#get-all-players')
+$('#get-your-players')
+$('#delete-players')
+
 const createTeamsSuccess = (data) => {
   $('#message').text('Successfully created team')
   $('#message').css('background-color', 'green')
   $('#create-teams').trigger('reset')
+  $('#create-player').css('display', 'block')
+  $('#update-player').css('display', 'block')
+  $('#get-all-players').css('display', 'block')
+  $('#get-your-players').css('display', 'block')
+  $('#delete-players').css('display', 'block')
+  store.teams = data.teams
 }
 const createTeamsFailure = () => {
   $('#message').text('Failure to create team')
@@ -83,6 +98,7 @@ const updateTeamsSuccess = (data) => {
   $('#message').text('Successfully updated team')
   $('#message').css('background-color', 'green')
   $('#update-teams').trigger('reset')
+  store.teams = data.teams
 }
 const updateTeamsFailure = () => {
   $('#message').text('Failure to update team')
@@ -116,6 +132,11 @@ const getTeamsSuccess = (data) => {
   $('#message2').css('display', 'block')
   $('#message2').text('Successfully got teams')
   $('#message2').css('background-color', 'green')
+  $('#create-player').css('display', 'block')
+  $('#update-player').css('display', 'block')
+  $('#get-all-players').css('display', 'block')
+  $('#get-your-players').css('display', 'block')
+  $('#delete-players').css('display', 'block')
 }
 
 const getTeamsFailure = () => {
@@ -127,11 +148,100 @@ const destroyTeamSuccess = (data) => {
   $('#message2').text('Successfully deleted team')
   $('#message2').css('background-color', 'green')
   $('#destroy-team').trigger('reset')
+  store.teams.id = null
 }
 const destroyTeamFailure = () => {
   $('#message2').text('Failure to delete team')
   $('#message2').css('background-color', 'red')
   $('#destroy-team').trigger('reset')
+}
+// Player UI below
+
+// CREATE PLAYER SUCCESS & FAILURE
+const createPlayerSuccess = (data) => {
+  $('#message2').text('Successfully created player')
+  $('#message2').css('background-color', 'green')
+  $('#create-teams').trigger('reset')
+  store.players = data.players
+}
+const createPlayerFailure = () => {
+  $('#message2').text('Failure to create player')
+  $('#message2').css('background-color', 'red')
+  $('#create-teams').trigger('reset')
+}
+
+// UPDATE PLAYER SUCCESS & FAILURE
+const updatePlayerSuccess = (data) => {
+  $('#message2').text('Successfully update player')
+  $('#message2').css('background-color', 'green')
+  $('#update-player').trigger('reset')
+  store.players = data.players
+}
+const updatePlayerFailure = () => {
+  $('#message2').text('Failure to update player')
+  $('#message2').css('background-color', 'red')
+  $('#update-player').trigger('reset')
+}
+
+// GET ALL PLAYERS SUCCESS & FAILURE
+const getAllPlayersSuccess = (data) => {
+  // Clears form fields
+  $('#get-all-players-list').text('')
+  $('#message2').text('')
+  $('#message2').css('background', 'none')
+  // Prints team names
+  if (data.teams.length > 0) {
+    $('#get-all-players-list').append('All Players', '<br>')
+    for (let i = 0; i < data.players.length; i++) {
+      const playerName = data.players[i].name
+      const playerId = data.players[i].id
+      $('#get-all-players-list').append(playerName, ' - ', playerId, '<br>')
+      $('#get-all-players-list').css('color', 'black')
+      $('#get-all-players-list').css('background', 'rgb(199,199,199)')
+      $('#get-all-players-list').css('display', 'block')
+      $('#get-all-players-list').css('text-align', 'center')
+      $('#get-all-players-list').css('font-size', '20px')
+    }
+  } else {
+    $('#get-all-players-list').append("You don't have any teams. First, go to 'Create Teams!' and enter a name for your 'Team Name'.")
+    $('#get-all-players-list').css('background-color', 'red')
+    $('#get-all-players-list').css('font color', '#ffffff')
+  }
+  $('#message2').text('Successfully got all players')
+  $('#message2').css('background-color', 'green')
+  $('#get-all-players').trigger('reset')
+}
+
+const getAllPlayersFailure = () => {
+  $('#message2').text('Failure to get all players')
+  $('#message2').css('background-color', 'red')
+  $('#get-all-players').trigger('reset')
+}
+
+// GET YOUR PLAYERS SUCCESS & FAILURE
+// :name, :position, :bat, :throw, :team_id
+const getYourPlayersSuccess = (data) => {
+  $('#message2').text('Successfully got your players')
+  $('#message2').css('background-color', 'green')
+  $('#get-your-players').trigger('reset')
+}
+const getYourPlayersFailure = () => {
+  $('#message2').text('Failure to get your players')
+  $('#message2').css('background-color', 'red')
+  $('#get-your-players').trigger('reset')
+}
+
+// DELETE PLAYERS SUCCESS & FAILURE
+const deletePlayersSuccess = (data) => {
+  $('#message2').text('Successfully deleted your players')
+  $('#message2').css('background-color', 'green')
+  $('#delete-players').trigger('reset')
+  store.players.id = null
+}
+const deletePlayersFailure = () => {
+  $('#message2').text('Failure to delete your players')
+  $('#message2').css('background-color', 'red')
+  $('#delete-players').trigger('reset')
 }
 
 module.exports = {
@@ -150,5 +260,15 @@ module.exports = {
   getTeamsSuccess,
   getTeamsFailure,
   destroyTeamSuccess,
-  destroyTeamFailure
+  destroyTeamFailure,
+  createPlayerSuccess,
+  createPlayerFailure,
+  updatePlayerSuccess,
+  updatePlayerFailure,
+  getAllPlayersSuccess,
+  getAllPlayersFailure,
+  getYourPlayersSuccess,
+  getYourPlayersFailure,
+  deletePlayersSuccess,
+  deletePlayersFailure
 }
