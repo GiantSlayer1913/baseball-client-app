@@ -6,11 +6,19 @@ const signUpSuccess = function () {
   $('#message').text('Successfully signed up')
   $('#message').css('background-color', 'green')
   $('#sign-up').trigger('reset')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
 }
 const signUpFailure = function () {
   $('#message').text('Failure signing up')
   $('#message').css('background-color', 'red')
   $('#sign-up').trigger('reset')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
 }
 const signInSuccess = function (data) {
   $('#message').text('Successfully signed in')
@@ -26,23 +34,39 @@ const signInSuccess = function (data) {
   $('#sign-up').trigger('reset')
   $('#sign-in').css('display', 'none')
   $('#sign-in').trigger('reset')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
   store.user = data.user
 }
 const signInFailure = function () {
   $('#message').text('Failure signing in')
   $('#message').css('background-color', 'red')
   $('#sign-in').trigger('reset')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
 }
 
 const changePasswordSuccess = function () {
   $('#message').text('Successfully changed password')
   $('#message').css('background-color', 'green')
   $('#change-password').trigger('reset')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
 }
 const changePasswordFailure = function () {
   $('#message').text('Failure to change password')
   $('#message').css('background-color', 'red')
   $('#change-password').trigger('reset')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
 }
 const signOutSuccess = function (data) {
   $('#message').text('Successfully signed out')
@@ -65,18 +89,26 @@ const signOutSuccess = function (data) {
   $('#get-your-players').css('display', 'none')
   $('#delete-players').css('display', 'none')
   $('#get-all-players-list').css('display', 'none')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
   store.user = null
 }
 const signOutFailure = function () {
   $('#message').text('Failure to sign out')
   $('#message').css('background-color', 'red')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
 }
 
 // Teams ui below
-$('#update-player')
-$('#get-all-players')
-$('#get-your-players')
-$('#delete-players')
+// $('#update-player')
+// $('#get-all-players')
+// $('#get-your-players')
+// $('#delete-players')
 
 const createTeamsSuccess = (data) => {
   $('#message').text('Successfully created team')
@@ -87,22 +119,38 @@ const createTeamsSuccess = (data) => {
   $('#get-all-players').css('display', 'block')
   $('#get-your-players').css('display', 'block')
   $('#delete-players').css('display', 'block')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
 }
 const createTeamsFailure = () => {
   $('#message').text('Failure to create team')
   $('#message').css('background-color', 'red')
   $('#create-teams').trigger('reset')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
 }
 
 const updateTeamsSuccess = (data) => {
   $('#message').text('Successfully updated team')
   $('#message').css('background-color', 'green')
   $('#update-teams').trigger('reset')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
 }
 const updateTeamsFailure = () => {
   $('#message').text('Failure to update team')
   $('#message').css('background-color', 'red')
   $('#update-teams').trigger('reset')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
 }
 
 const getTeamsSuccess = (data) => {
@@ -136,22 +184,38 @@ const getTeamsSuccess = (data) => {
   $('#get-all-players').css('display', 'block')
   $('#get-your-players').css('display', 'block')
   $('#delete-players').css('display', 'block')
+  setTimeout(() => {
+    $('#message2').html('')
+  }, 3000
+  )
 }
 
 const getTeamsFailure = () => {
   $('#message2').text('Failure to get teams')
   $('#message2').css('background-color', 'red')
+  setTimeout(() => {
+    $('#message2').html('')
+  }, 3000
+  )
 }
 
 const destroyTeamSuccess = (data) => {
   $('#message2').text('Successfully deleted team')
   $('#message2').css('background-color', 'green')
   $('#destroy-team').trigger('reset')
+  setTimeout(() => {
+    $('#message2').html('')
+  }, 3000
+  )
 }
 const destroyTeamFailure = () => {
   $('#message2').text('Failure to delete team')
   $('#message2').css('background-color', 'red')
   $('#destroy-team').trigger('reset')
+  setTimeout(() => {
+    $('#message2').html('')
+  }, 3000
+  )
 }
 // Player UI below
 
