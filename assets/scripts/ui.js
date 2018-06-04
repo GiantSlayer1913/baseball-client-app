@@ -7,7 +7,7 @@ const signUpSuccess = function () {
   $('#message').css('background-color', 'green')
   $('#sign-up').trigger('reset')
   setTimeout(() => {
-    $('#message').html('')
+    $('#message').css('dispay', 'none')
   }, 3000
   )
 }
@@ -16,7 +16,7 @@ const signUpFailure = function () {
   $('#message').css('background-color', 'red')
   $('#sign-up').trigger('reset')
   setTimeout(() => {
-    $('#message').html('')
+    $('#message').css('dispay', 'none')
   }, 3000
   )
 }
@@ -35,7 +35,7 @@ const signInSuccess = function (data) {
   $('#sign-in').css('display', 'none')
   $('#sign-in').trigger('reset')
   setTimeout(() => {
-    $('#message').html('')
+    $('#message').css('dispay', 'none')
   }, 3000
   )
   store.user = data.user
@@ -45,7 +45,7 @@ const signInFailure = function () {
   $('#message').css('background-color', 'red')
   $('#sign-in').trigger('reset')
   setTimeout(() => {
-    $('#message').html('')
+    $('#message').css('dispay', 'none')
   }, 3000
   )
 }
@@ -55,7 +55,7 @@ const changePasswordSuccess = function () {
   $('#message').css('background-color', 'green')
   $('#change-password').trigger('reset')
   setTimeout(() => {
-    $('#message').html('')
+    $('#message').css('dispay', 'none')
   }, 3000
   )
 }
@@ -64,7 +64,7 @@ const changePasswordFailure = function () {
   $('#message').css('background-color', 'red')
   $('#change-password').trigger('reset')
   setTimeout(() => {
-    $('#message').html('')
+    $('#message').css('dispay', 'none')
   }, 3000
   )
 }
@@ -90,7 +90,7 @@ const signOutSuccess = function (data) {
   $('#delete-players').css('display', 'none')
   $('#get-all-players-list').css('display', 'none')
   setTimeout(() => {
-    $('#message').html('')
+    $('#message').css('dispay', 'none')
   }, 3000
   )
   store.user = null
@@ -99,7 +99,7 @@ const signOutFailure = function () {
   $('#message').text('Failure to sign out')
   $('#message').css('background-color', 'red')
   setTimeout(() => {
-    $('#message').html('')
+    $('#message').css('dispay', 'none')
   }, 3000
   )
 }
@@ -120,7 +120,7 @@ const createTeamsSuccess = (data) => {
   $('#get-your-players').css('display', 'block')
   $('#delete-players').css('display', 'block')
   setTimeout(() => {
-    $('#message').html('')
+    $('#message').css('dispay', 'none')
   }, 3000
   )
 }
@@ -129,7 +129,7 @@ const createTeamsFailure = () => {
   $('#message').css('background-color', 'red')
   $('#create-teams').trigger('reset')
   setTimeout(() => {
-    $('#message').html('')
+    $('#message').css('dispay', 'none')
   }, 3000
   )
 }
@@ -139,7 +139,7 @@ const updateTeamsSuccess = (data) => {
   $('#message').css('background-color', 'green')
   $('#update-teams').trigger('reset')
   setTimeout(() => {
-    $('#message').html('')
+    $('#message').css('dispay', 'none')
   }, 3000
   )
 }
@@ -148,7 +148,7 @@ const updateTeamsFailure = () => {
   $('#message').css('background-color', 'red')
   $('#update-teams').trigger('reset')
   setTimeout(() => {
-    $('#message').html('')
+    $('#message').css('dispay', 'none')
   }, 3000
   )
 }
@@ -185,7 +185,7 @@ const getTeamsSuccess = (data) => {
   $('#get-your-players').css('display', 'block')
   $('#delete-players').css('display', 'block')
   setTimeout(() => {
-    $('#message2').html('')
+    $('#message2').css('dispay', 'none')
   }, 3000
   )
 }
@@ -194,7 +194,7 @@ const getTeamsFailure = () => {
   $('#message2').text('Failure to get teams')
   $('#message2').css('background-color', 'red')
   setTimeout(() => {
-    $('#message2').html('')
+    $('#message2').css('dispay', 'none')
   }, 3000
   )
 }
@@ -204,7 +204,7 @@ const destroyTeamSuccess = (data) => {
   $('#message2').css('background-color', 'green')
   $('#destroy-team').trigger('reset')
   setTimeout(() => {
-    $('#message2').html('')
+    $('#message2').css('dispay', 'none')
   }, 3000
   )
 }
@@ -213,7 +213,7 @@ const destroyTeamFailure = () => {
   $('#message2').css('background-color', 'red')
   $('#destroy-team').trigger('reset')
   setTimeout(() => {
-    $('#message2').html('')
+    $('#message2').css('dispay', 'none')
   }, 3000
   )
 }
