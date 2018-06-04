@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mike's Database</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1>Baseball Client</h1>
+
+  <div id="message"></div>
+
+  <!-- Auth Forms -->
+
+  <!-- SIGN UP  -->
+  <form id="sign-up" class="border visible-on-start">
+    <fieldset>
+      <legend>Sign up!</legend>
+      <input required type="email" name="credentials[email]" placeholder="Email" autocomplete='email'>
+      <input required type="password" name="credentials[password]" placeholder="Password" autocomplete="false">
+      <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" autocomplete="off">
+      <input type="submit" value="Sign up!">
+    </fieldset>
+  </form>
+  <br>
+<!-- SIGN IN  -->
+  <form id="sign-in" class="border visible-on-start">
+    <fieldset>
+      <legend>Sign in!</legend>
+      <input required type="email" name="credentials[email]" placeholder="Email" autocomplete='email'>
+      <input required type="password" name="credentials[password]" placeholder="Password" autocomplete="off">
+      <input type="submit" value="Sign in!">
+    </fieldset>
+  </form>
+  <br>
+<!-- CHANGE PASSWORD  -->
+  <form id="change-password" class="border">
+    <fieldset>
+      <legend>Change password!</legend>
+      <input type="password" name="passwords[old]" placeholder="Old Password" autocomplete="off">
+      <input type="password" name="passwords[new]" placeholder="New Password" autocomplete="off">
+      <input type="submit" value="Change password!">
+    </fieldset>
+  </form>
+  <br>
+<!-- SIGN OUT  -->
+  <form id="sign-out" class="border">
+    <fieldset>
+      <legend>Sign out!</legend>
+      <input type="submit" value="Sign out!">
+    </fieldset>
+  </form>
+  <br>
+
+  <!-- Teams Forms -->
+  <div id="team-forms" class='team-forms'>Team forms below here:</div>
+
+<!-- CREATE TEAMS  -->
+  <form id="create-teams" class="border">
+    <fieldset>
+      <legend>Create Teams!</legend>
+      <input required type="text" name="team[team_name]" placeholder="Team Name" autocomplete="off">
+      <input type="submit" value="Create Teams!">
+    </fieldset>
+  </form>
+  <br>
+
+<!-- MESSAGE 2  -->
+  <div id="message2"></div>
+
+<!-- GET TEAMS  -->
+  <form id="get-teams" class="border">
+    <fieldset>
+      <legend>Get Teams!</legend>
+      <input type="submit" value="Get Teams!">
+    </fieldset>
+  </form>
+  <br>
+
+<!-- UPADTE TEAMS  -->
+  <form id="update-teams" class="border">
+    <fieldset>
+      <legend>Update Team!</legend>
+      <input required type="text" name="team[id]" placeholder="Team ID" autocomplete="off">
+      <input required type="text" name="team[team_name]" placeholder="Team Name" autocomplete="off">
+      <input type="submit" value="Update Team!">
+    </fieldset>
+  </form>
+  <br>
+
+<!-- DESTROY TEAMS  -->
+  <form id="destroy-team" class="border">
+    <fieldset>
+      <legend>Delete Team!</legend>
+      <input required type="text" name="team[id]" placeholder="Team ID" autocomplete="off">
+      <input type="submit" value="Delete Team!">
+    </fieldset>
+  </form>
+  <br>
+
+<!-- TEAMS LIST -->
+  <div id="team-list" class="team-list"></div>
+
+  <!-- Player Forms -->
+
+  <div id="player-forms" class='player-forms'>Player forms below:</div>
+
+<!-- CREATE PLAYER -->
+  <!-- <form id="create-player" class="border">
+    <fieldset>
+      <legend>Create Players!</legend>
+      <input required type="text" name="name" placeholder="Name" autocomplete="off">
+      <input required type="text" name="position" placeholder="Position" autocomplete="off">
+      <input required type="text" name="bat" placeholder="Bat" autocomplete="off">
+      <input required type="text" name="throw" placeholder="Throw" autocomplete="off">
+      <input required type="text" name="team_id" placeholder="Team ID" autocomplete="off">
+      <input type="submit" value="Create Player!">
+    </fieldset>
+  </form> -->
+  <br>
+
+<!-- UPDATE PLAYER -->
+  <!-- <form id="update-player" class="border">
+    <fieldset>
+      <legend>Update Player!</legend>
+      <input required type="text" name="team_id" placeholder="Team ID" autocomplete="on">
+      <input required type="text" name="player_id" placeholder="Player ID" autocomplete="on">
+      <input type="text" name="name" placeholder="Name" autocomplete="off">
+      <input type="text" name="position" placeholder="Position" autocomplete="off">
+      <input type="text" name="bat" placeholder="Bat" autocomplete="off">
+      <input type="text" name="throw" placeholder="Throw" autocomplete="off">
+      <input type="submit" value="Update Player!">
+    </fieldset>
+  </form> -->
+
+<!-- GET ALL PLAYERS -->
+  <!-- <form id="get-all-players" class="border">
+    <fieldset>
+      <legend>See All Players!</legend>
+      <input type="submit" value="Get All Players!">
+    </fieldset>
+  </form> -->
+  <br>
+
+<div id="get-all-players-list" class="players-list"></div>
+
+<!-- GET YOUR PLAYERS -->
+  <!-- <form id="get-your-players" class="border">
+    <fieldset>
+      <legend>See Your Roster!</legend>
+      <input required type="text" name="team_id" placeholder="Team ID" autocomplete="on">
+      <input type="submit" value="Get Your Players!">
+    </fieldset>
+  </form>
+  <br> -->
+
+  <div id="get-your-players-list" class="players-list"></div>
+
+<!-- DELETE PLAYER  -->
+<!-- <form id="delete-players" class="border">
+  <fieldset>
+    <legend>Delete Players!</legend>
+    <input required type="text" name="player[player_id]" placeholder="Player ID" autocomplete="on">
+    <input type="submit" value="Delete Player!">
+  </fieldset>
+</form> -->
+<br>
+
+
+
+</body>
+
+</html>
