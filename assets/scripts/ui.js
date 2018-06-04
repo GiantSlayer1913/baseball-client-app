@@ -35,7 +35,7 @@ const signInSuccess = function (data) {
   $('#sign-in').css('display', 'none')
   $('#sign-in').trigger('reset')
   setTimeout(() => {
-    $('#message').css('dispay', 'none')
+    $('#message').html('')
   }, 3000
   )
   store.user = data.user
