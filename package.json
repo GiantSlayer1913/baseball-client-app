@@ -10,6 +10,7 @@
     "atob": "^2.1.2",
     "cryptiles": "^4.1.2",
     "deep-extend": "^0.6.0",
+    "extend": "^3.0.2",
     "jquery": "^3.3.1",
     "macaddress": "^0.2.9",
     "merge": "^1.2.1",
@@ -41,10 +42,10 @@
     "grunt-sass-lint": "^0.2.4",
     "grunt-shell": "^2.1.0",
     "grunt-webpack": "^3.0.2",
-    "handlebars": "^4.0.11",
+    "handlebars": "^4.1.0",
     "handlebars-loader": "^1.6.0",
     "html-loader": "^0.5.5",
-    "load-grunt-config": "^0.19.2",
+    "load-grunt-config": "^1.0.1",
     "mocha": "^5.0.4",
     "node-libs-browser": "^2.1.0",
     "node-sass": "^4.9.3",
@@ -53,6 +54,6 @@
     "time-grunt": "^1.4.0",
     "url-loader": "^1.0.1",
     "webpack": "^3.5.1",
-    "webpack-dev-server": "^3.1.9"
+    "webpack-dev-server": "^3.2.0"
   }
 }
